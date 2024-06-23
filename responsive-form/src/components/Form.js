@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../middleware/UserSlice";
+import FormInput from "./FormInput";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -204,154 +205,71 @@ export default function Form() {
       </p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="mt-5 sm:flex w-full">
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Full Name</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("name", name)[1]}
-                </p>
-              </div>
-              <input
-                type="text"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none ${
-                  getValidationMessage("name", name)[0]
-                }`}
-                placeholder="Enter your full name"
-                value={name}
-                onClick={() => handleInputClick("name")}
-                onBlur={() => handleInputBlur("name")}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("name", name)[1]}
-              </p>
-            </div>
-          </div>
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Phone</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("phone", phone)[1]}
-                </p>
-              </div>
-              <input
-                type="number"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none ${
-                  getValidationMessage("phone", phone)[0]
-                }`}
-                placeholder="Enter your phone"
-                value={phone}
-                onClick={() => handleInputClick("phone")}
-                onBlur={() => handleInputBlur("phone")}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("phone", phone)[1]}
-              </p>
-            </div>
-          </div>
+          <FormInput
+            label="Full Name"
+            type="text"
+            value={name}
+            placeholder="Enter your full name"
+            validationMessage={getValidationMessage("name", name)[1]}
+            onClick={() => handleInputClick("name")}
+            onBlur={() => handleInputBlur("name")}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <FormInput
+            label="Phone"
+            type="number"
+            value={phone}
+            placeholder="Enter your phone"
+            validationMessage={getValidationMessage("phone", phone)[1]}
+            onClick={() => handleInputClick("phone")}
+            onBlur={() => handleInputBlur("phone")}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
         <div className="mt-3 sm:flex w-full">
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Email</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("email", email)[1]}
-                </p>
-              </div>
-              <input
-                type="email"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none ${
-                  getValidationMessage("email", email)[0]
-                }`}
-                placeholder="Enter your email"
-                value={email}
-                onClick={() => handleInputClick("email")}
-                onBlur={() => handleInputBlur("email")}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("email", email)[1]}
-              </p>
-            </div>
-          </div>
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Date of Birth</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("dob", dob)[1]}
-                </p>
-              </div>
-              <input
-                type="date"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none ${
-                  getValidationMessage("dob", dob)[0]
-                }`}
-                value={dob}
-                onClick={() => handleInputClick("dob")}
-                onBlur={() => handleInputBlur("dob")}
-                onChange={(e) => setDob(e.target.value)}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("dob", dob)[1]}
-              </p>
-            </div>
-          </div>
+          <FormInput
+            label="Email"
+            type="email"
+            value={email}
+            placeholder="Enter your email"
+            validationMessage={getValidationMessage("email", email)[1]}
+            onClick={() => handleInputClick("email")}
+            onBlur={() => handleInputBlur("email")}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FormInput
+            label="Date of Birth"
+            type="date"
+            value={dob}
+            validationMessage={getValidationMessage("dob", dob)[1]}
+            onClick={() => handleInputClick("dob")}
+            onBlur={() => handleInputBlur("dob")}
+            onChange={(e) => setDob(e.target.value)}
+          />
         </div>
-
         <div className="mt-3 sm:flex w-full">
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Password</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("password", password)[1]}
-                </p>
-              </div>
-              <input
-                type="password"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none ${
-                  getValidationMessage("password", password)[0]
-                }`}
-                placeholder="Enter your password"
-                value={password}
-                onClick={() => handleInputClick("password")}
-                onBlur={() => handleInputBlur("password")}
-                onChange={handlePasswordChange}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("password", password)[1]}
-              </p>
-            </div>
-          </div>
-          <div className="sm:w-1/2 sm:mt-0 mt-3">
-            <div className="lg:px-3 md:px-2 px-1 w-full">
-              <div className="flex">
-                <label className="text-md font-medium">Confirm Password</label>
-                <p className="block sm:hidden ml-1 text-red-500 text-sm mt-1">
-                  {getValidationMessage("confirmPassword", confirmPassword)[1]}
-                </p>
-              </div>
-              <input
-                type="password"
-                className={`w-full border-2 rounded-xl px-4 py-3 mt-1 outline-none ${
-                  getValidationMessage("confirmPassword", confirmPassword)[0]
-                }`}
-                placeholder="Confirm your password"
-                value={confirmPassword}
-                onClick={() => handleInputClick("confirmPassword")}
-                onBlur={() => handleInputBlur("confirmPassword")}
-                onChange={handleConfirmPasswordChange}
-              />
-              <p className="hidden sm:block text-red-500 text-sm mt-1">
-                {getValidationMessage("confirmPassword", confirmPassword)[1]}
-              </p>
-            </div>
-          </div>
+          <FormInput
+            label="Password"
+            type="password"
+            value={password}
+            placeholder="Enter your password"
+            validationMessage={getValidationMessage("password", password)[1]}
+            onClick={() => handleInputClick("password")}
+            onBlur={() => handleInputBlur("password")}
+            onChange={handlePasswordChange}
+          />
+          <FormInput
+            label="Confirm Password"
+            type="password"
+            value={confirmPassword}
+            placeholder="Confirm your password"
+            validationMessage={
+              getValidationMessage("confirmPassword", confirmPassword)[1]
+            }
+            onClick={() => handleInputClick("confirmPassword")}
+            onBlur={() => handleInputBlur("confirmPassword")}
+            onChange={handleConfirmPasswordChange}
+          />
         </div>
         <div className="xl:px-48 md:px-36 sm:px-24 px-12 mt-8 flex flex-col gap-y-4">
           <button
