@@ -197,7 +197,7 @@ export default function Form() {
   };
 
   return (
-    <div className="bg-white w-full md:mx-8 lg:mx-24 xl:mx-40 px-10 sm:py-12 py-4 rounded-3xl sm:border-2 border-gray-200 scale-[.95] sm:scale-100">
+    <div className="bg-white w-full md:mx-8 lg:mx-24 xl:mx-40 sm:px-10 sm:py-12 py-4 rounded-3xl sm:border-2 border-gray-200 scale-[.93] sm:scale-100">
       <h1 className=" text-4xl font-bold">Register</h1>
       <p className="font-medium text-lg text-gray-500 mt-3">
         Please enter your details.
