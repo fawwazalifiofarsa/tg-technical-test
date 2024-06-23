@@ -99,6 +99,12 @@ Make sure you have the following installed on your machine:
 
 ### Java Programs
 
+1. Array Manipulation
+   ![arrayManipulationPreview](https://github.com/fawwazalifiofarsa/tg-technical-test/assets/88119082/f9ce2842-fa4b-4f27-9dbc-1f079f42277b)
+
+2. Anagram Detection
+   ![anagramDetectionPreview](https://github.com/fawwazalifiofarsa/tg-technical-test/assets/88119082/f7349bcf-1c1b-4ce8-862e-6e160c2d05c1)
+
 ### Responsive Registration Form
 You can preview the application live at the following link: [Registration Form Preview](https://tg-technical-test.vercel.app/)
 
