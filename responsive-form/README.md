@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Registration Form Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple registration form application built using React, Redux for state management, and Tailwind CSS for styling and responsiveness.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **React**: The core of the application is built with React, a JavaScript library for building user interfaces.
+- **Redux**: State management is handled by Redux, allowing us to store and manage the form data effectively.
+- **Tailwind CSS**: Styling and responsiveness are achieved using Tailwind CSS, a utility-first CSS framework.
 
-### `npm start`
+## Usage
+The application consists of a registration form with the following fields:
+- Full Name
+- Phone
+- Email
+- Date of Birth
+- Password
+- Confirm Password
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Form Validation
+The form includes validation for each field:
+- **Full Name**: Must contain only alphabets.
+- **Phone**: Must contain only numbers.
+- **Email**: Must be a valid email address.
+- **Date of Birth**: Users must be at least 17 years old.
+- **Password**: Must be between 8 to 16 characters.
+- **Confirm Password**: Must match the password.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### State Management
+The form data is managed using Redux. The form values are stored in the Redux store, and actions are dispatched to update the state as the user interacts with the form.
 
-### `npm test`
+### Styling and Responsiveness
+The application is styled using Tailwind CSS. Responsive design is achieved by using Tailwind's utility classes for different breakpoints.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Preview
+You can preview the application live at the following link: [Registration Form Preview](https://tg-technical-test.vercel.app/)
