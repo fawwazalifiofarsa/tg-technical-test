@@ -19,9 +19,14 @@ public class arrayManipulation {
         int targetSum = scanner.nextInt();
         List<int[]> pairs = findPairsWithSum(arr, targetSum);
         System.out.println("Pairs that sum up to the target:");
-        for (int[] pair : pairs) {
-            System.out.print(Arrays.toString(pair));
+        System.out.print("[");
+        for (int i = 0; i < pairs.size(); i++) {
+            System.out.print(Arrays.toString(pairs.get(i)));
+            if (i < pairs.size() - 1) {
+                System.out.print(", ");
+            }
         }
+        System.out.println("]");
         scanner.close();
     }
 
